@@ -1,0 +1,25 @@
+#myslide {
+    width: 500px;
+    height: 700px;
+    border: 3px solid black;
+    position: relative;
+    overflow: hidden;
+}
+
+#one, #two {
+    width: 500px;
+    height: 700px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    transition: all ease 500ms;
+}
+
+#one {
+    background: yellow;
+}
+
+#two {
+    background: green;
+}
