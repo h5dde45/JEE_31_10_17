@@ -1,14 +1,14 @@
 // function f1() {
-//     var p, p1;
-//     p = document.getElementById('out');
+//     var p6, p1;
+//     p6 = document.getElementById('out');
 //     p1 = document.getElementById('out1');
 //
 //     // for (var i = 1; i <= 100; i=i+3) {
-//     //     p.innerHTML += i + ' ';
+//     //     p6.innerHTML += i + ' ';
 //     // }
 //     var i = 0;
 //     while (i < 100) {
-//         p.innerHTML += i++ + ' ';
+//         p6.innerHTML += i++ + ' ';
 //     }
 //     var j = 0;
 //     do {

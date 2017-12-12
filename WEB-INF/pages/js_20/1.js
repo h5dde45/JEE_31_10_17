@@ -10,7 +10,7 @@ function sum(a, b) {
 document.getElementById("b").onclick = function () {
     sum(6, 7);
 }
-// p.innerHTML = result;
+// p6.innerHTML = result;
 // console.log(sum(22, 3));
 var a=function () {
     alert("+++++")
