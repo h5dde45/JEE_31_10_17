@@ -1,8 +1,6 @@
 package tagval.u6;
 
 
-import com.sun.istack.internal.NotNull;
-
 public class User implements Comparable<User> {
     private boolean valid;
 
@@ -15,7 +13,7 @@ public class User implements Comparable<User> {
     }
 
     @Override
-    public int compareTo(@NotNull User o) {
+    public int compareTo( User o) {
         return Boolean.compare(valid,o.valid);
     }
 

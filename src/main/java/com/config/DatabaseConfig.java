@@ -13,7 +13,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.annotation.Resource;
+//import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.InputStream;
@@ -26,7 +26,7 @@ import java.util.Properties;
 @PropertySource(value = "classpath:db.properties")
 public class DatabaseConfig {
 
-    @Resource
+//    @Resource
     private Environment env;
 
     @Bean
