@@ -1,9 +1,6 @@
 package tagval.u9;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.util.Arrays;
 
 public class IO {
@@ -28,9 +25,25 @@ public class IO {
         InputStream inputStream3 = new FileInputStream(
                 "C:\\java_projects\\july2017\\JEE_31_10_17\\" +
                         "src\\main\\java\\tagval\\u9\\data.txt");
-        OutputStream outputStream=System.out;
+        OutputStream outputStream = System.out;
         inputStream3.transferTo(outputStream);
 
+        System.out.println();
+
+//        InputStream is = new URL("https://ya.ru/").openStream();
+//        System.out.println(new String(is.readAllBytes(), StandardCharsets.UTF_8));
+//
+//        URL url = new URL("https://ya.ru/");
+//        InputStream is2 = url.openConnection().getInputStream();
+//        System.out.println(new String(is2.readAllBytes(), StandardCharsets.UTF_8));
+        try(
+        InputStream in=new FileInputStream("C:\\java_projects\\july2017\\" +
+                "JEE_31_10_17\\src\\main\\java\\tagval\\u9\\data.txt");
+        OutputStream out=new FileOutputStream("C:\\java_projects\\july2017\\" +
+                "JEE_31_10_17\\src\\main\\java\\tagval\\u9\\out.txt");
+        ){
+            in.transferTo(out);
+        }
 
     }
 
