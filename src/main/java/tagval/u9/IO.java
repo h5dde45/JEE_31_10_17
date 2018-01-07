@@ -1,7 +1,6 @@
 package tagval.u9;
 
 import java.io.*;
-import java.util.Arrays;
 
 public class IO {
     public static void main(String[] args) throws IOException {
@@ -12,21 +11,21 @@ public class IO {
         InputStream inputStream = new FileInputStream(
                 "C:\\java_projects\\july2017\\JEE_31_10_17\\" +
                         "src\\main\\java\\tagval\\u9\\data.txt");
-        byte[] bytes1 = inputStream.readAllBytes();
-        System.out.println(Arrays.toString(bytes1));
+//        byte[] bytes1 = inputStream.readAllBytes();
+//        System.out.println(Arrays.toString(bytes1));
 
         InputStream inputStream2 = new FileInputStream(
                 "C:\\java_projects\\july2017\\JEE_31_10_17\\" +
                         "src\\main\\java\\tagval\\u9\\data.txt");
         byte[] b = new byte[142];
-        int i = inputStream2.readNBytes(b, 4, 53);
-        System.out.println(i + " = " + Arrays.toString(b));
+//        int i = inputStream2.readNBytes(b, 4, 53);
+//        System.out.println(i + " = " + Arrays.toString(b));
 
         InputStream inputStream3 = new FileInputStream(
                 "C:\\java_projects\\july2017\\JEE_31_10_17\\" +
                         "src\\main\\java\\tagval\\u9\\data.txt");
         OutputStream outputStream = System.out;
-        inputStream3.transferTo(outputStream);
+//        inputStream3.transferTo(outputStream);
 
         System.out.println();
 
@@ -42,7 +41,7 @@ public class IO {
         OutputStream out=new FileOutputStream("C:\\java_projects\\july2017\\" +
                 "JEE_31_10_17\\src\\main\\java\\tagval\\u9\\out.txt");
         ){
-            in.transferTo(out);
+//            in.transferTo(out);
         }
 
     }
