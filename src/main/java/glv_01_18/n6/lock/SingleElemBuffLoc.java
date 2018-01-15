@@ -1,4 +1,4 @@
-package glv_01_18.n6;
+package glv_01_18.n6.lock;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
@@ -19,19 +19,23 @@ public class SingleElemBuffLoc {
             elem = newElem;
             notEmpty.signal();
             System.out.print("");
-        }finally {
+        } finally {
             lock.unlock();
         }
     }
 
     public synchronized int get() throws InterruptedException {
         lock.lock();
-        while (elem == null) {
-            this.wait();
+        try {
+            while (elem == null) {
+                notEmpty.await();
+            }
+            Integer result = this.elem;
+            elem = null;
+            notFull.signal();
+            return result;
+        }finally {
+            lock.unlock();
         }
-        Integer result = this.elem;
-        elem = null;
-        this.notifyAll();
-        return result;
     }
 }
