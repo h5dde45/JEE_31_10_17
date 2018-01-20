@@ -1,6 +1,7 @@
 package tv_15_01.mltthr.p11;
 
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -19,7 +20,12 @@ class Main {
     public static void main(String[] args) throws InterruptedException {
         final int threads = Runtime.getRuntime().availableProcessors();
         Doer doer = new Doer();
+        CountDownLatch latch = new CountDownLatch(1);
         Runnable runnable = () -> {
+            try {
+                latch.await();
+            } catch (InterruptedException ignore) {
+            }
             doer.doOnce(() ->
                     System.out.println("In thread " + Thread.currentThread()));
         };
@@ -27,6 +33,7 @@ class Main {
                 .limit(threads)
                 .peek(Thread::start)
                 .collect(Collectors.toList());
+        latch.countDown();
         for (Thread thread : list) {
             thread.join();
         }
